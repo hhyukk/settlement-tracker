@@ -46,7 +46,7 @@ VAL-10 가운데 첫 시드 적용 시작일을 늦추는 경우는 시드 이�
 
 | 레벨 | 도구와 환경 | 대상 | 실행 시점 |
 | --- | --- | --- | --- |
-| 단위 | JUnit 5, Vitest. 서버와 클라이언트가 shared-test-vectors/money.json을 함께 읽음 | 금액과 수익률 순수 함수, 시드 구간 분할, 통합 수익률, 기간 프리셋, 금액 입력 서식 | 커밋마다 |
+| 단위 | JUnit, Vitest. 서버와 클라이언트가 shared-test-vectors/money.json을 함께 읽음 | 금액과 수익률 순수 함수, 시드 구간 분할, 통합 수익률, 기간 프리셋, 금액 입력 서식 | 커밋마다 |
 | 통합 | Spring Boot Test, Testcontainers(PostgreSQL) | 제약, 부분 유일 인덱스, 윈도 함수, 트랜잭션과 잠금, 동시 요청 | 커밋마다 |
 | API | MockMvc | 상태 코드, 오류 본문(code, message, fieldErrors, details), 쿠키 속성, 요청 형식 | 커밋마다 |
 | 구조 | ArchUnit | 시간대 금지 규칙, 의존 방향 | 커밋마다 |
@@ -73,7 +73,7 @@ CI는 단위, 통합, API, 구조 테스트를 모두 통과한 커밋만 jar로
 
 | 환경 | 구성 | 용도 |
 | --- | --- | --- |
-| CI | GitHub Actions, Java 21, Testcontainers PostgreSQL, TZ=UTC | 단위, 통합, API, 구조 테스트 |
+| CI | GitHub Actions, Java 25, Testcontainers PostgreSQL, TZ=UTC | 단위, 통합, API, 구조 테스트 |
 | 배포 환경 | Oracle Cloud A1 VM(호스트 UTC), caddy, app, db 컨테이너, 무료 서브도메인 HTTPS | 화면, 실기기, 보안 헤더, 배포 스크립트, 백업 복구 |
 | 성능 측정 DB | 배포 환경 VM에 임시로 띄운 별도 DB에 D5 적재 | 응답 시간 측정 후 삭제 |
 | 실기기 | 실사용자 안드로이드 휴대폰(또는 같은 OS와 브라우저), 삼성 인터넷, 크롬, 문자 앱, 카카오톡 | 초대 링크, 쿠키 유지, PWA, 키패드, 화면 폭 |
